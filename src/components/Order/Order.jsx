@@ -140,38 +140,18 @@ const Order = () => {
           >
             Konfirmasi Pesanan
           </button>
-        </form>
-      )}
 
-      {/* Pop-up "Terima Kasih" dengan Pilihan */}
-      {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center">
-            <h2 className="text-2xl font-semibold text-gray-700">Terima Kasih!</h2>
-            <p className="mt-2 text-gray-600">Pesanan Anda telah berhasil dikonfirmasi.</p>
-            <p className="mt-2 text-gray-600">Mohon Tunggu Barang Akan di Kirim!!!</p>
-            <div className="flex justify-center mt-4 space-x-4">
-              <button
-                onClick={() => {
-                  setShowPopup(false);
-                  navigate("/"); // Kembali ke halaman home
-                }}
-                className="bg-[#00CED1] text-white px-6 py-2 rounded-lg font-semibold hover:scale-105 active:scale-95 transition-transform duration-200"
-              >
-                Kembali ke Home
-              </button>
-              <button
-                onClick={() => {
-                  setShowPopup(false);
-                  navigate("/cart");
-                }}
-                className="bg-gray-500 text-white px-6 py-2 rounded-lg font-semibold hover:scale-105 active:scale-95 transition-transform duration-200"
-              >
-                Belanja Lagi
-              </button>
-            </div>
+          {/* Tombol Kembali ke Cart */}
+          <div className="mt-4 flex justify-center">
+            <button
+              onClick={() => navigate("/cart")}
+              type="button"
+              className="bg-gray-500 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 active:scale-95 transition-transform duration-200"
+            >
+              Kembali ke Cart
+            </button>
           </div>
-        </div>
+        </form>
       )}
     </div>
   );
