@@ -14,6 +14,7 @@ const backgroundStyle = {
 const location = {
   name: "Chemical Life",
   address: "Jl. Cendrawasih No.123, Manokwari, Indonesia",
+  time:"JAM : 7 Pagi - 10 Malam",
   mapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d792.0984648372391!2d134.06911367133824!3d-0.836415896303816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1742734766400!5m2!1sid!2sid",
 };
@@ -42,7 +43,13 @@ const MapComponent = () => {
             <p className="text-white/90 text-center sm:text-left font-medium drop-shadow-md">
               {location.address}
             </p>
+            <p className="text-white/90 text-center sm:text-left font-medium drop-shadow-md">
+              {location.time}
+            </p>
+
           </div>
+          
+          
 
           {/* Google Maps Section */}
           <div
