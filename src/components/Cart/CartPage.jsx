@@ -177,7 +177,7 @@ const CartPage = () => {
                   );
                   setIsModalOpen(false);
                   // Arahkan ke halaman order (gantilah "/order" dengan path yang benar)
-                  window.location.href = "/order";
+                  window.location.href = "/Order";
                 }}
                 className="bg-[#00CED1] text-white px-4 py-2 rounded-lg hover:scale-105 transition"
               >
