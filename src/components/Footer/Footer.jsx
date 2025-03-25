@@ -47,7 +47,7 @@ const Footer = () => {
               target="_blank"
               className="inline-block bg-[#00CED1] py-2 px-4 mt-5 text-sm rounded-full"
             >
-              Visit our YouTube Channel
+              YouTube Video For More Information About This Website
             </a>
           </div>
 
