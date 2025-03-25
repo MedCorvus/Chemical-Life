@@ -43,7 +43,7 @@ const Footer = () => {
             <p className="pt-4 max-w-md">
               Trusted Medicine, Expert Care, and Better Health – Your Partner for a Healthier Life.
             </p>
-            <a href="https://www.youtube.com/channel/UC1H-a1MKEFXRiFlGNLcy7gQ"
+            <a href="https://youtube.com/shorts/dHJdw-5pQ88?si=K94cDyzZEV_uVDxz"
               target="_blank"
               className="inline-block bg-[#00CED1] py-2 px-4 mt-5 text-sm rounded-full"
             >
@@ -104,13 +104,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
+    </div>
 
         {/* Copyright Section */}
-        <div className="border-t border-gray-500/50 text-center py-11 text-sm bg-black/40">
+        <div className="border-t border-gray-500/50 text-center py-11 text-sm bg-black/60">
           © {new Date().getFullYear()} Chemical Life. All rights reserved.
         </div>
       </div>
-    </div>
   );
 };
 
