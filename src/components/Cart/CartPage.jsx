@@ -59,21 +59,21 @@ const CartPage = () => {
       id: 8,
       name: "Cetirizine.png",
       qty: 0,
-      price: 25000,
+      price: 30000,
       image: "/Cetirizine.png"
     },
     {
       id: 9,
       name: "Metformin",
       qty: 0,
-      price: 25000,
+      price: 45000,
       image: "/Metformin.png"
     },
     {
       id: 10,
       name: "Guaifenesin",
       qty: 0,
-      price: 25000,
+      price: 15000,
       image: "/Guaifenesin.png"
     }
   ]);
