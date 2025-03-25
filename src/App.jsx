@@ -9,9 +9,9 @@ import Banner from "./components/Banner/Banner.jsx";
 import MapComponent from "./components/Maps/MapComponent.jsx";
 import Testimonials from "./components/Testimonials/Testimonials.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import Order from "./components/Services/Order";
+import Order from "./components/Order/Order";
 import Sejarah from "./components/sejarah/Sejarah";
-import CartPage from "./components/Hero/CartPage";
+import CartPage from "./components/Cart/CartPage";
 
 // AOS
 import AOS from "aos";

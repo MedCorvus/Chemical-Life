@@ -76,7 +76,7 @@ const Navbar = () => {
 
             {/* Order button (tetap di kanan) */}
             <Link
-              to="/cart"
+              to="/Cart"
               className="bg-white hover:scale-105 duration-200 text-[#1abc9c] px-4 py-2 rounded-full flex items-center gap-3 font-semibold"
             >
               Order
