@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const formatRupiah = (angka) => {
   return angka.toLocaleString("id-ID", { style: "currency", currency: "IDR" });
@@ -7,9 +7,9 @@ const formatRupiah = (angka) => {
 
 const Order = () => {
   const [cartItems, setCartItems] = useState([]);
-  const [paymentMethod, setPaymentMethod] = useState(""); // Pilihan pembayaran
-  const [showPopup, setShowPopup] = useState(false); // Pop-up "Terima Kasih"
-  const navigate = useNavigate(); // Gunakan useNavigate
+  const [paymentMethod, setPaymentMethod] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cartSummary");
@@ -20,28 +20,25 @@ const Order = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (paymentMethod === "QRIS") return; // Cegah konfirmasi jika QRIS
+    if (paymentMethod === "QRIS") return;
 
-    localStorage.removeItem("cartSummary"); // Hapus keranjang setelah checkout
+    localStorage.removeItem("cartSummary");
     setCartItems([]);
-    setShowPopup(true); // Tampilkan pop-up
+    setShowPopup(true);
   };
 
   return (
     <div className="container py-20">
       {/* Header */}
-      <div className="flex justify-center mb-10" data-aos="fade-down">
-        <div className="relative">
-          <div className="absolute inset-0 bg-[#00CED1] rounded-lg transform rotate-1 shadow-lg"></div>
-          <h1 className="relative text-4xl font-bold px-8 py-4 bg-[#00CED1] rounded-lg text-white shadow-md">
-            Formulir Pemesanan
-          </h1>
-        </div>
+      <div className="flex justify-center mb-10">
+        <h1 className="text-4xl font-bold bg-[#00CED1] text-white px-8 py-4 rounded-lg shadow-md">
+          Formulir Pemesanan
+        </h1>
       </div>
 
       {/* Ringkasan Pesanan */}
       {cartItems.length > 0 && (
-        <div className="max-w-lg mx-auto bg-white p-6 rounded-xl shadow-lg mb-6" data-aos="zoom-in">
+        <div className="max-w-lg mx-auto bg-white p-6 rounded-xl shadow-lg mb-6">
           <h2 className="text-xl font-semibold mb-4">Pesanan Anda</h2>
           <ul className="space-y-3">
             {cartItems.map((item, index) => (
@@ -69,40 +66,47 @@ const Order = () => {
         <form
           onSubmit={handleSubmit}
           className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-2xl transform transition-all duration-500 hover:scale-[1.02]"
-          data-aos="zoom-in"
         >
+          {/* Nama */}
           <div className="mb-6">
             <label className="block text-gray-700 mb-2 font-semibold">Nama Lengkap</label>
             <input
               type="text"
-              placeholder="Masukkan nama Anda"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00CED1] transition-all duration-300"
+              placeholder="Masukkan Nama Anda"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00CED1]"
               required
             />
           </div>
+
+          {/* Nomor Telepon */}
           <div className="mb-6">
             <label className="block text-gray-700 mb-2 font-semibold">Nomor Telepon</label>
             <input
               type="text"
               placeholder="0812xxxxxxx"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00CED1] transition-all duration-300"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00CED1]"
               required
             />
           </div>
+
+
+          {/* Alamat */}
           <div className="mb-6">
-            <label className="block text-gray-700 mb-2 font-semibold">Pesanan</label>
+            <label className="block text-gray-700 mb-2 font-semibold">Alamat Lengkap</label>
             <textarea
-              placeholder="Tulis detail tambahan..."
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00CED1] transition-all duration-300"
-              rows="4"
-            ></textarea>
+              placeholder="Masukkan Alamat Anda"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00CED1] resize-none"
+              rows="3"
+              required
+            />
           </div>
+
 
           {/* Pilihan Metode Pembayaran */}
           <div className="mb-6">
             <label className="block text-gray-700 mb-2 font-semibold">Metode Pembayaran</label>
             <select
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00CED1] transition-all duration-300"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00CED1]"
               value={paymentMethod}
               onChange={(e) => setPaymentMethod(e.target.value)}
               required
@@ -128,7 +132,7 @@ const Order = () => {
             </div>
           )}
 
-          {/* Tombol Kirim Pesanan */}
+          {/* Tombol Konfirmasi */}
           <button
             type="submit"
             className={`w-full text-white py-3 rounded-lg font-semibold transition-transform duration-200 ${
@@ -136,7 +140,7 @@ const Order = () => {
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-[#00CED1] hover:scale-105 active:scale-95"
             }`}
-            disabled={paymentMethod === "QRIS"} // Tombol mati jika QRIS
+            disabled={paymentMethod === "QRIS"}
           >
             Konfirmasi Pesanan
           </button>
@@ -153,6 +157,40 @@ const Order = () => {
           </div>
         </form>
       )}
+
+{/* Pop-up Sukses */}
+{showPopup && (
+  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+      <h2 className="text-xl font-bold mb-4">🎉 Terima Kasih!</h2>
+      <p>Pesanan Anda telah berhasil dikonfirmasi.</p>
+      
+      <div className="mt-4 flex justify-center gap-4">
+        {/* Tombol Kembali ke Beranda */}
+        <button
+          className="bg-[#00CED1] text-white px-6 py-2 rounded-lg hover:scale-105 transition-transform"
+          onClick={() => {
+            setShowPopup(false);
+            navigate("/");
+          }}
+        >
+          Kembali ke Beranda
+        </button>
+
+        {/* Tombol Belanja Lagi */}
+        <button
+          className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:scale-105 transition-transform"
+          onClick={() => {
+            setShowPopup(false);
+            navigate("/cart");
+          }}>
+          Belanja Lagi
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };

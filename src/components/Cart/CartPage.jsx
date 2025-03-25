@@ -48,6 +48,34 @@ const CartPage = () => {
       price: 40000,
       image: "/Cetyl Pure.png",
     },
+    {
+      id: 7,
+      name: "Amlodipine",
+      qty: 0,
+      price: 25000,
+      image: "/Amlodipine.png"
+    },
+    {
+      id: 8,
+      name: "Cetirizine.png",
+      qty: 0,
+      price: 25000,
+      image: "/Cetirizine.png"
+    },
+    {
+      id: 9,
+      name: "Metformin",
+      qty: 0,
+      price: 25000,
+      image: "/Metformin.png"
+    },
+    {
+      id: 10,
+      name: "Guaifenesin",
+      qty: 0,
+      price: 25000,
+      image: "/Guaifenesin.png"
+    }
   ]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -54,6 +54,34 @@ const ServicesData = [
       "Obat yang digunakan untuk mengatasi masalah lambung, seperti asam lambung tinggi, GERD, dan tukak lambung.",
     aosDelay: "500",
   },
+  {
+    id: 7,
+    name: "Amlodipine",
+    description:
+      " Obat antihipertensi (golongan calcium channel blocker) yang digunakan untuk mengobati tekanan darah tinggi dan angina (nyeri dada akibat penyakit jantung).",
+    aosDelay: "500",
+  },
+  {
+    id: 8,
+    name: "Cetirizine",
+    description:
+      "Antihistamin yang digunakan untuk mengatasi alergi seperti rinitis alergi dan urtikaria (gatal-gatal pada kulit).",
+    aosDelay: "500",
+  },
+  {
+    id: 9,
+    name: "Metformin",
+    description:
+      "Obat untuk diabetes tipe 2 yang membantu menurunkan kadar gula darah dengan meningkatkan sensitivitas insulin.",
+    aosDelay: "500",
+  },
+  {
+    id: 10,
+    name: "Guaifenesin",
+    description:
+      "Ekspektoran yang membantu mengencerkan dan mengeluarkan lendir dari saluran pernapasan, digunakan untuk batuk berdahak.",
+    aosDelay: "500",
+  }
 ];
 
 const Services = () => {
