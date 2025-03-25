@@ -1,6 +1,6 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
-import FooterBg from "../../assets/website/medicine-banner.jpg";
+
 
 const FooterLinks = [
   {
@@ -33,14 +33,14 @@ const bgImage = {
 const Footer = () => {
   return (
     <div style={bgImage} className="text-white">
-      <div className="bg-black/40 min-h-[400px]">
-        <div className="container grid md:grid-cols-3 pb-10 pt-5">
+      <div className="bg-black/40 min-h-[400px] flex justify-center items-center">
+        <div className="container grid md:grid-cols-3 pb-10 pt-5 text-center">
           {/* company details */}
-          <div className="py-8 px-4">
+          <div className="py-8 px-4 flex flex-col items-center">
             <a href="#" className="font-semibold tracking-widest text-2xl sm:text-3xl font-[Poppins]">
               Chemical Life
             </a>
-            <p className="pt-4">
+            <p className="pt-4 max-w-md">
               Trusted Medicine, Expert Care, and Better Health – Your Partner for a Healthier Life.
             </p>
             <a href="https://www.youtube.com/channel/UC1H-a1MKEFXRiFlGNLcy7gQ"
@@ -50,6 +50,7 @@ const Footer = () => {
               YouTube Video For More Information About This Website
             </a>
           </div>
+
 
           {/* Footer links */}
           <div className="col-span-2 grid grid-cols-2 sm:grid-cols-3 md:pl-10">
