@@ -118,7 +118,7 @@ const Order = () => {
             <div className="text-center mb-6">
               <p className="text-gray-700 font-semibold">Silakan scan QRIS di bawah:</p>
               <img
-                src="/src/assets/website/qrcode.png"
+                src="/public/qrcode.png"
                 alt="QRIS Payment"
                 className="w-40 h-40 mx-auto my-4"
               />
